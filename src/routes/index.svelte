@@ -1,2 +1,28 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script context="module">
+	export async function load({ fetch }) {
+		const res = await fetch(
+			`https://api.themoviedb.org/3/movie/popular?api_key=${
+				import.meta.env.VITE_API_KEY
+			}`,
+		)
+		const data = await res.json()
+		return {
+			props: { popular: data.results },
+		}
+	}
+</script>
+
+<script>
+	import { fly } from 'svelte/transition'
+	import PopularMovies from '../components/PopularMovies.svelte'
+	import SearchMovies from '../components/SearchMovies.svelte'
+	export let popular
+</script>
+
+<section
+	in:fly={{ y: 50, duration: 500, delay: 500 }}
+	out:fly={{ duration: 500 }}
+>
+	<SearchMovies />
+	<PopularMovies {popular} />
+</section>
