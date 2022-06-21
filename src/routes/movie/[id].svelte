@@ -35,11 +35,13 @@
 	out:fly={{ duration: 500 }}
 	class="p-5 shadow-md rounded-md"
 >
-	<button
-		class="mb-5 border border-gray-500 px-3 py-1.5 rounded-md hover:bg-black hover:text-white transition-all shadow-md"
-	>
-		<a href={previousPage}>Go Back</a>
-	</button>
+        <a href={previousPage}>
+	    <button
+		    class="mb-5 border border-gray-500 px-3 py-1.5 rounded-md hover:bg-black hover:text-white transition-all shadow-md"
+	    >
+	            Go Back	
+	    </button>
+        </a>
 	<div>
 		<img
 			class="w-full rounded-md"
