@@ -12,8 +12,10 @@
 		<h2 class="text-lg font-bold">{movie.title}</h2>
 		<p>Rating: {movie.vote_average}</p>
 	</div>
-	<button
-		class="w-full border border-gray-500 rounded-md py-1 hover:bg-black hover:text-white transition-all"
-		><a sveltekit:prefetch href={`/movie/${movie.id}`}>Detail</a></button
-	>
+        <a sveltekit:prefetch href={`/movie/${movie.id}`}>
+	    <button
+		class="w-full border border-gray-500 rounded-md py-1 hover:bg-black hover:text-white transition-all">
+                Detail
+            </button>
+        </a>
 </div>
