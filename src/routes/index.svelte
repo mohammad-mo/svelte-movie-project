@@ -6,8 +6,14 @@
 			}`,
 		)
 		const data = await res.json()
+		if (data) {
+			return {
+				props: { popular: data.results },
+			}
+		}
+
 		return {
-			props: { popular: data.results },
+			status: 404,
 		}
 	}
 </script>

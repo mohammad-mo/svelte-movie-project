@@ -6,8 +6,14 @@
 			}&language=en-US`,
 		)
 		const movieDetail = await res.json()
+		if (movieDetail) {
+			return {
+				props: { movieDetail },
+			}
+		}
+
 		return {
-			props: { movieDetail },
+			status: 404,
 		}
 	}
 </script>

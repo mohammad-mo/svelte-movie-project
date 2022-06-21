@@ -6,8 +6,14 @@
 			}&language=en-US&query=${params.name}&page=1&include_adult=false`,
 		)
 		const data = await res.json()
+		if (data) {
+			return {
+				props: { searchedMovie: data.results },
+			}
+		}
+
 		return {
-			props: { searchedMovie: data.results },
+			status: 404,
 		}
 	}
 </script>
