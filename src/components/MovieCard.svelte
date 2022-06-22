@@ -10,12 +10,13 @@
 	/>
 	<div class="my-4 space-y-2">
 		<h2 class="text-lg font-bold">{movie.title}</h2>
-		<p>Rating: {movie.vote_average}</p>
+		<p>Rating: {movie.vote_average}/10</p>
 	</div>
-        <a sveltekit:prefetch href={`/movie/${movie.id}`}>
-	    <button
-		class="w-full border border-gray-500 rounded-md py-1 hover:bg-black hover:text-white transition-all">
-                Detail
-            </button>
-        </a>
+	<a sveltekit:prefetch href={`/movie/${movie.id}`}>
+		<button
+			class="w-full border border-gray-500 rounded-md py-1 hover:bg-black hover:text-white transition-all"
+		>
+			Detail
+		</button>
+	</a>
 </div>

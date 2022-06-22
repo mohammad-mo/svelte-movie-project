@@ -26,12 +26,12 @@
 
 <div in:fly={{ y: 50, duration: 500, delay: 500 }} out:fly={{ duration: 500 }}>
 	<a href="/">
-            <button
-		    class="mb-5 border border-gray-500 px-3 py-1.5 rounded-md hover:bg-black hover:text-white transition-all shadow-md"
-	    >
-		    Go Back
-	    </button>
-        </a>
+		<button
+			class="mb-5 border border-gray-500 px-3 py-1.5 rounded-md hover:bg-black hover:text-white transition-all shadow-md"
+		>
+			Go Back
+		</button>
+	</a>
 	<div class="grid grid-cols-movies gap-x-4 gap-y-6">
 		{#each searchedMovie as movie}
 			<MovieCard {movie} />
